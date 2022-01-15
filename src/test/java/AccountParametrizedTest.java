@@ -1,3 +1,5 @@
+import io.qameta.allure.Description;
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -37,7 +39,9 @@ public class AccountParametrizedTest {
     }
 
     @Test
-    public void checkCardHolderTest(){
+    @DisplayName("Проверка имени держателя банковской карты")
+    @Description("Проверка, что имя держателя банковской карты подходит под заданные условия")
+    public void checkCardHolderNameTest(){
         Account account = new Account(name);
         boolean actual = account.checkNameToEmboss();
         assertEquals(expectedName, actual);
